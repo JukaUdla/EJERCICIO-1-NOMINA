@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-  int total_de_horas_trabajadas,bucle;
+  int total_de_horas_trabajadas;
   float valor_por_hora;
   float monto_de_ventas;
   float total;
-  float salario,nomina;
+  float salario,bucle,nomina;
   float vh,ven,sb;
 
 int main(void) {
@@ -16,7 +16,6 @@ do {
   scanf("%f",&valor_por_hora);
   printf("ingrese el monto de ventas: \n");
   scanf("%f",&monto_de_ventas);
-
 
 
 if (total_de_horas_trabajadas<=40){
@@ -31,7 +30,7 @@ else if (total_de_horas_trabajadas<=55){
   vh=total_de_horas_trabajadas*valor_por_hora+((valor_por_hora*0.15)*(total_de_horas_trabajadas-50));
   printf("Valor de horas es= %.2f\n",vh);
 }
-else if (total_de_horas_trabajadas>55){
+else {
   vh=total_de_horas_trabajadas*valor_por_hora+((valor_por_hora*0.2)*(total_de_horas_trabajadas-55));
   printf("Valor de horas es= %.2f\n",vh);
 }
@@ -50,7 +49,7 @@ else if (monto_de_ventas<=3000){
   ven=monto_de_ventas*0.06;
   printf("Monto de ventas es= %.2f\n",ven);
 }
-else if (monto_de_ventas>3000){
+else {
   ven=monto_de_ventas*0.08;
   printf("Monto de ventas es= %.2f\n",ven);
 } 
@@ -58,10 +57,10 @@ else if (monto_de_ventas>3000){
 salario=(vh-(vh*9.45/100))+ven;
   printf("SALARIO es=%.2f",salario);
 
-nomina+=salario;
+nomina+=salario; //acumulador//
 
 printf("\nIngrese\n1.- Continuar\n2.- Salir\n");
-  scanf("%d",&bucle);
+  scanf("%f",&bucle);
 } while (bucle==1);  
   printf("TOTAL NOMINA= %.2f \n",nomina);
   return 0;
